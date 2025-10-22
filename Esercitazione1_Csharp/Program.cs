@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+namespace Esercitazione1_Csharp
+{
+    public class Program
+    {
+        static void Main(string[] arg)
+        {
+            Console.WriteLine("Hello World!!!");
+            Console.Read();
+        }
+    }
+}
