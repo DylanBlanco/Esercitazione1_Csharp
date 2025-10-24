@@ -119,25 +119,49 @@ namespace Esercitazione1_Csharp
         //    }
         //}
 
-        // snack5 - CALCOLA LA SOMMA E LA MEDIA DI NUMERI INSERITI DALL'UTENTE FINO A QUANDO NON INSERISCE 0
+        //// snack5 - CALCOLA LA SOMMA E LA MEDIA DI NUMERI INSERITI DALL'UTENTE FINO A QUANDO NON INSERISCE 0
+        //static void Main(string[] arg)
+        //{
+        //    Console.WriteLine("Inserisci il primo numero: ");
+        //    int numUtente1 = int.Parse(Console.ReadLine());
+        //    Console.WriteLine("Inserisci il secondo numero: ");
+        //    int numUtente2 = int.Parse(Console.ReadLine());
+
+        //    if (numUtente1 != 0 && numUtente2 != 0)
+        //    {
+        //        int somma = numUtente1 + numUtente2;
+        //        Console.WriteLine("la somma dei numeri è:" + somma);
+
+        //        double media = somma / 2;
+        //        Console.WriteLine("la media dei numeri è:" + media);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Hai inserito 0, impossibile calcolare somma e media.");
+        //    }
+        //}
+
+        // snack6 - STAMPA I NUMERI DA 1 A 100, SOSTITUENDO I MULTIPLI DI 3 CON "Fizz", I MULTIPLI DI 5 CON "Buzz" E I MULTIPLI DI ENTRAMBI CON "FizzBuzz"
         static void Main(string[] arg)
         {
-            Console.WriteLine("Inserisci il primo numero: ");
-            int numUtente1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Inserisci il secondo numero: ");
-            int numUtente2 = int.Parse(Console.ReadLine());
-
-            if (numUtente1 != 0 && numUtente2 != 0)
+            for (int i = 1; i <= 100; i++)
             {
-                int somma = numUtente1 + numUtente2;
-                Console.WriteLine("la somma dei numeri è:" + somma);
-
-                double media = somma / 2;
-                Console.WriteLine("la media dei numeri è:" + media);
-            }
-            else
-            {
-                Console.WriteLine("Hai inserito 0, impossibile calcolare somma e media.");
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                }
+                else if (i % 3 == 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
             }
         }
     }
