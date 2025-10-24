@@ -75,31 +75,47 @@ namespace Esercitazione1_Csharp
         //    }
         //}
 
-        // snack3 - CREA UN ARRAY DI 10 NUMERI E STAMPA SOLO I NUMERI DISPARI
+        //// snack3 - CREA UN ARRAY DI 10 NUMERI E STAMPA SOLO I NUMERI DISPARI
+        //static void Main(string[] arg)
+        //{
+        //    int numeroElementi = 5;
+        //    int[] arrayNum = new int[numeroElementi];
+
+        //    Random generatore = new Random();  // generatore di num casuale
+        //    for (int i=0; i<numeroElementi; i++)
+        //    {
+        //        int numero = generatore.Next(1, 11); // genera un numero casuale tra 1 e 10
+        //        arrayNum[i] = numero;  //salva num in array
+        //    }
+        //    // visualizza array generato
+        //    foreach (int numero in arrayNum)
+        //    {
+        //        Console.WriteLine(numero);
+        //    }
+
+        //    Console.WriteLine("Numeri dispari nell'array:");
+        //    foreach (int numero in arrayNum)
+        //    {
+        //        if (numero % 2 != 0) // verifica se il numero è dispari
+        //        {
+        //            Console.WriteLine(numero); // stampa il numero dispari
+        //        }
+        //    }
+        //}
+
+
+        // snack4 - CHIEDI ALL'UTENTE UN NUMERO FINO A QUANDO NON INSERISCE UN NUMERO PARI
         static void Main(string[] arg)
         {
-            int numeroElementi = 5;
-            int[] arrayNum = new int[numeroElementi];
+            Console.WriteLine("Inserisci un numero: ");
 
-            Random generatore = new Random();  // generatore di num casuale
-            for (int i=0; i<numeroElementi; i++)
+            int numUtente = int.Parse(Console.ReadLine());
+            Console.WriteLine("Hai inserito: " + numUtente);
+            while (numUtente % 2 != 0)
             {
-                int numero = generatore.Next(1, 11); // genera un numero casuale tra 1 e 10
-                arrayNum[i] = numero;  //salva num in array
-            }
-            // visualizza array generato
-            foreach (int numero in arrayNum)
-            {
-                Console.WriteLine(numero);
-            }
-
-            Console.WriteLine("Numeri dispari nell'array:");
-            foreach (int numero in arrayNum)
-            {
-                if (numero % 2 != 0) // verifica se il numero è dispari
-                {
-                    Console.WriteLine(numero); // stampa il numero dispari
-                }
+                Console.WriteLine("Il numero inserito è dispari. Inserisci un numero pari: ");
+                numUtente = int.Parse(Console.ReadLine());
+                Console.WriteLine("Hai inserito: " + numUtente);
             }
         }
     }
