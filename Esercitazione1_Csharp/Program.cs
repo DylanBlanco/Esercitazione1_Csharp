@@ -104,18 +104,40 @@ namespace Esercitazione1_Csharp
         //}
 
 
-        // snack4 - CHIEDI ALL'UTENTE UN NUMERO FINO A QUANDO NON INSERISCE UN NUMERO PARI
+        //// snack4 - CHIEDI ALL'UTENTE UN NUMERO FINO A QUANDO NON INSERISCE UN NUMERO PARI
+        //static void Main(string[] arg)
+        //{
+        //    Console.WriteLine("Inserisci un numero: ");
+
+        //    int numUtente = int.Parse(Console.ReadLine());
+        //    Console.WriteLine("Hai inserito: " + numUtente);
+        //    while (numUtente % 2 != 0)
+        //    {
+        //        Console.WriteLine("Il numero inserito è dispari. Inserisci un numero pari: ");
+        //        numUtente = int.Parse(Console.ReadLine());
+        //        Console.WriteLine("Hai inserito: " + numUtente);
+        //    }
+        //}
+
+        // snack5 - CALCOLA LA SOMMA E LA MEDIA DI NUMERI INSERITI DALL'UTENTE FINO A QUANDO NON INSERISCE 0
         static void Main(string[] arg)
         {
-            Console.WriteLine("Inserisci un numero: ");
+            Console.WriteLine("Inserisci il primo numero: ");
+            int numUtente1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Inserisci il secondo numero: ");
+            int numUtente2 = int.Parse(Console.ReadLine());
 
-            int numUtente = int.Parse(Console.ReadLine());
-            Console.WriteLine("Hai inserito: " + numUtente);
-            while (numUtente % 2 != 0)
+            if (numUtente1 != 0 && numUtente2 != 0)
             {
-                Console.WriteLine("Il numero inserito è dispari. Inserisci un numero pari: ");
-                numUtente = int.Parse(Console.ReadLine());
-                Console.WriteLine("Hai inserito: " + numUtente);
+                int somma = numUtente1 + numUtente2;
+                Console.WriteLine("la somma dei numeri è:" + somma);
+
+                double media = somma / 2;
+                Console.WriteLine("la media dei numeri è:" + media);
+            }
+            else
+            {
+                Console.WriteLine("Hai inserito 0, impossibile calcolare somma e media.");
             }
         }
     }
