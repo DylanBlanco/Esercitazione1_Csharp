@@ -219,17 +219,37 @@ namespace Esercitazione1_Csharp
         //}
 
 
-        // snack9 - CHIEDI ALL'UTENTE DI INSERIRE UNA FRASE E UNA PAROLA, POI STAMPA LA FRASE SENZA LA PAROLA INSERITA
+        //// snack9 - CHIEDI ALL'UTENTE DI INSERIRE UNA FRASE E UNA PAROLA, POI STAMPA LA FRASE SENZA LA PAROLA INSERITA
+        //static void Main(string[] arg)
+        //{
+        //    Console.WriteLine("Inserisci una frase: ");
+        //    string fraseUtente = Console.ReadLine();
+
+        //    Console.WriteLine("Inserisci una parola da rimuovere dalla frase: ");
+        //    string parolaDaRimuovere = Console.ReadLine();
+
+        //    string fraseModificata = fraseUtente.Replace(parolaDaRimuovere, "");
+        //    Console.WriteLine("Frase modificata: " + fraseModificata);
+        //}
+
+        // snack10 - CREA DUE ARRAY DI 5 NUMERI E CREA UN TERZO ARRAY CHE CONTIENE LA SOMMA DEI NUMERI DEI DUE ARRAY NELLA STESSA POSIZIONE
         static void Main(string[] arg)
         {
-            Console.WriteLine("Inserisci una frase: ");
-            string fraseUtente = Console.ReadLine();
+            int dimensioneArray = 5;
+            int[] array1 = new int[dimensioneArray];
+            int[] array2 = new int[dimensioneArray];
+            int[] arraySomma = new int[dimensioneArray];
 
-            Console.WriteLine("Inserisci una parola da rimuovere dalla frase: ");
-            string parolaDaRimuovere = Console.ReadLine();
-
-            string fraseModificata = fraseUtente.Replace(parolaDaRimuovere, "");
-            Console.WriteLine("Frase modificata: " + fraseModificata);
+            Random generatore = new Random();
+            for (int i = 0; i < dimensioneArray; i++)
+            {
+                array1[i] = generatore.Next(1, 11);
+                array2[i] = generatore.Next(1, 11);
+                arraySomma[i] = array1[i] + array2[i];
+            }
+            Console.WriteLine("Array 1: " + string.Join(", ", array1));
+            Console.WriteLine("Array 2: " + string.Join(", ", array2));
+            Console.WriteLine("Array Somma: " + string.Join(", ", arraySomma));
         }
     }
 }
