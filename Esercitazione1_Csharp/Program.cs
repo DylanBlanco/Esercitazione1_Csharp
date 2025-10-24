@@ -185,37 +185,51 @@ namespace Esercitazione1_Csharp
         //    Console.WriteLine("La parola al contrario è: " + parolaInversa);
         //}
 
-        // snack8 - CREA UN ARRAY DI 10 NUMERI CASUALI E STAMPA IL NUMERO PIU' GRANDE E IL NUMERO PIU' PICCOLO
+        //// snack8 - CREA UN ARRAY DI 10 NUMERI CASUALI E STAMPA IL NUMERO PIU' GRANDE E IL NUMERO PIU' PICCOLO
+        //static void Main(string[] arg)
+        //{
+        //    Console.WriteLine("Inserisci il num di elementi da creare:");
+        //    int numElementi = int.Parse(Console.ReadLine());
+
+        //    Random numRandom = new Random();
+
+        //    int[] arrayNum = new int[numElementi];
+
+        //    for (int i = 0; i < numElementi; i++)
+        //    {
+        //        arrayNum[i] = numRandom.Next(1, 11);
+        //    }
+        //    Console.WriteLine("Array generato:" + string.Join(",", arrayNum));
+
+        //    int numMax = arrayNum[0];
+        //    int numMin = arrayNum[0];
+        //    for (int i=0; i<arrayNum.Length; i++)
+        //    {
+        //        if (arrayNum[i] > numMax)
+        //        {
+        //            numMax = arrayNum[i];
+        //        }
+        //        if (arrayNum[i] < numMin)
+        //        {
+        //            numMin = arrayNum[i];
+        //        }
+        //    }
+        //    Console.WriteLine("Il numero più grande è: " + numMax);
+        //    Console.WriteLine("Il numero più piccolo è: " + numMin);
+        //}
+
+
+        // snack9 - CHIEDI ALL'UTENTE DI INSERIRE UNA FRASE E UNA PAROLA, POI STAMPA LA FRASE SENZA LA PAROLA INSERITA
         static void Main(string[] arg)
         {
-            Console.WriteLine("Inserisci il num di elementi da creare:");
-            int numElementi = int.Parse(Console.ReadLine());
+            Console.WriteLine("Inserisci una frase: ");
+            string fraseUtente = Console.ReadLine();
 
-            Random numRandom = new Random();
+            Console.WriteLine("Inserisci una parola da rimuovere dalla frase: ");
+            string parolaDaRimuovere = Console.ReadLine();
 
-            int[] arrayNum = new int[numElementi];
-
-            for (int i = 0; i < numElementi; i++)
-            {
-                arrayNum[i] = numRandom.Next(1, 11);
-            }
-            Console.WriteLine("Array generato:" + string.Join(",", arrayNum));
-
-            int numMax = arrayNum[0];
-            int numMin = arrayNum[0];
-            for (int i=0; i<arrayNum.Length; i++)
-            {
-                if (arrayNum[i] > numMax)
-                {
-                    numMax = arrayNum[i];
-                }
-                if (arrayNum[i] < numMin)
-                {
-                    numMin = arrayNum[i];
-                }
-            }
-            Console.WriteLine("Il numero più grande è: " + numMax);
-            Console.WriteLine("Il numero più piccolo è: " + numMin);
+            string fraseModificata = fraseUtente.Replace(parolaDaRimuovere, "");
+            Console.WriteLine("Frase modificata: " + fraseModificata);
         }
     }
 }
