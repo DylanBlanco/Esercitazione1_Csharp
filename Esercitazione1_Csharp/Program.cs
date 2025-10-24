@@ -168,21 +168,54 @@ namespace Esercitazione1_Csharp
         //}
 
 
-        // snack7 - CHIEDI ALL'UTENTE DI INSERIRE UNA PAROLA E STAMPA LA PAROLA AL CONTRARIO
+        //// snack7 - CHIEDI ALL'UTENTE DI INSERIRE UNA PAROLA E STAMPA LA PAROLA AL CONTRARIO
+        //static void Main(string[] arg)
+        //{
+        //    Console.WriteLine("Inserisci una parola: ");
+        //    string parolaUtente = Console.ReadLine();
+
+        //    char[] arrParola = parolaUtente.ToCharArray();
+
+        //    Console.Write(string.Join(",", arrParola));
+
+        //    Array.Reverse(arrParola);
+
+        //    string parolaInversa = new string(arrParola);
+
+        //    Console.WriteLine("La parola al contrario è: " + parolaInversa);
+        //}
+
+        // snack8 - CREA UN ARRAY DI 10 NUMERI CASUALI E STAMPA IL NUMERO PIU' GRANDE E IL NUMERO PIU' PICCOLO
         static void Main(string[] arg)
         {
-            Console.WriteLine("Inserisci una parola: ");
-            string parolaUtente = Console.ReadLine();
+            Console.WriteLine("Inserisci il num di elementi da creare:");
+            int numElementi = int.Parse(Console.ReadLine());
 
-            char[] arrParola = parolaUtente.ToCharArray();
+            Random numRandom = new Random();
 
-            Console.Write(string.Join(",", arrParola));
+            int[] arrayNum = new int[numElementi];
 
-            Array.Reverse(arrParola);
+            for (int i = 0; i < numElementi; i++)
+            {
+                arrayNum[i] = numRandom.Next(1, 11);
+            }
+            Console.WriteLine("Array generato:" + string.Join(",", arrayNum));
 
-            string parolaInversa = new string(arrParola);
-
-            Console.WriteLine("La parola al contrario è: " + parolaInversa);
+            int numMax = arrayNum[0];
+            int numMin = arrayNum[0];
+            for (int i=0; i<arrayNum.Length; i++)
+            {
+                if (arrayNum[i] > numMax)
+                {
+                    numMax = arrayNum[i];
+                }
+                if (arrayNum[i] < numMin)
+                {
+                    numMin = arrayNum[i];
+                }
+            }
+            Console.WriteLine("Il numero più grande è: " + numMax);
+            Console.WriteLine("Il numero più piccolo è: " + numMin);
         }
     }
 }
