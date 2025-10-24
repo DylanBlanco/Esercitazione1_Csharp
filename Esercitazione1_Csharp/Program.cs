@@ -119,6 +119,7 @@ namespace Esercitazione1_Csharp
         //    }
         //}
 
+
         //// snack5 - CALCOLA LA SOMMA E LA MEDIA DI NUMERI INSERITI DALL'UTENTE FINO A QUANDO NON INSERISCE 0
         //static void Main(string[] arg)
         //{
@@ -141,28 +142,47 @@ namespace Esercitazione1_Csharp
         //    }
         //}
 
-        // snack6 - STAMPA I NUMERI DA 1 A 100, SOSTITUENDO I MULTIPLI DI 3 CON "Fizz", I MULTIPLI DI 5 CON "Buzz" E I MULTIPLI DI ENTRAMBI CON "FizzBuzz"
+
+        //// snack6 - STAMPA I NUMERI DA 1 A 100, SOSTITUENDO I MULTIPLI DI 3 CON "Fizz", I MULTIPLI DI 5 CON "Buzz" E I MULTIPLI DI ENTRAMBI CON "FizzBuzz"
+        //static void Main(string[] arg)
+        //{
+        //    for (int i = 1; i <= 100; i++)
+        //    {
+        //        if (i % 3 == 0 && i % 5 == 0)
+        //        {
+        //            Console.WriteLine("FizzBuzz");
+        //        }
+        //        else if (i % 3 == 0)
+        //        {
+        //            Console.WriteLine("Fizz");
+        //        }
+        //        else if (i % 5 == 0)
+        //        {
+        //            Console.WriteLine("Buzz");
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine(i);
+        //        }
+        //    }
+        //}
+
+
+        // snack7 - CHIEDI ALL'UTENTE DI INSERIRE UNA PAROLA E STAMPA LA PAROLA AL CONTRARIO
         static void Main(string[] arg)
         {
-            for (int i = 1; i <= 100; i++)
-            {
-                if (i % 3 == 0 && i % 5 == 0)
-                {
-                    Console.WriteLine("FizzBuzz");
-                }
-                else if (i % 3 == 0)
-                {
-                    Console.WriteLine("Fizz");
-                }
-                else if (i % 5 == 0)
-                {
-                    Console.WriteLine("Buzz");
-                }
-                else
-                {
-                    Console.WriteLine(i);
-                }
-            }
+            Console.WriteLine("Inserisci una parola: ");
+            string parolaUtente = Console.ReadLine();
+
+            char[] arrParola = parolaUtente.ToCharArray();
+
+            Console.Write(string.Join(",", arrParola));
+
+            Array.Reverse(arrParola);
+
+            string parolaInversa = new string(arrParola);
+
+            Console.WriteLine("La parola al contrario è: " + parolaInversa);
         }
     }
 }
