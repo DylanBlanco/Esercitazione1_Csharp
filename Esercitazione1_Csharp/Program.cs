@@ -232,24 +232,48 @@ namespace Esercitazione1_Csharp
         //    Console.WriteLine("Frase modificata: " + fraseModificata);
         //}
 
-        // snack10 - CREA DUE ARRAY DI 5 NUMERI E CREA UN TERZO ARRAY CHE CONTIENE LA SOMMA DEI NUMERI DEI DUE ARRAY NELLA STESSA POSIZIONE
+        //// snack10 - CREA DUE ARRAY DI 5 NUMERI E CREA UN TERZO ARRAY CHE CONTIENE LA SOMMA DEI NUMERI DEI DUE ARRAY NELLA STESSA POSIZIONE
+        //static void Main(string[] arg)
+        //{
+        //    int dimensioneArray = 5;
+        //    int[] array1 = new int[dimensioneArray];
+        //    int[] array2 = new int[dimensioneArray];
+        //    int[] arraySomma = new int[dimensioneArray];
+
+        //    Random generatore = new Random();
+        //    for (int i = 0; i < dimensioneArray; i++)
+        //    {
+        //        array1[i] = generatore.Next(1, 11);
+        //        array2[i] = generatore.Next(1, 11);
+        //        arraySomma[i] = array1[i] + array2[i];
+        //    }
+        //    Console.WriteLine("Array 1: " + string.Join(", ", array1));
+        //    Console.WriteLine("Array 2: " + string.Join(", ", array2));
+        //    Console.WriteLine("Array Somma: " + string.Join(", ", arraySomma));
+        //}
+
+
+        // snack11 - CREA UN ARRAY DI 20 NUMERI CASUALI, SE IL NUM CREATO E' 11 SMETTI DI CREARE NUMERI E STAMPA L'ARRAY
         static void Main(string[] arg)
         {
-            int dimensioneArray = 5;
-            int[] array1 = new int[dimensioneArray];
-            int[] array2 = new int[dimensioneArray];
-            int[] arraySomma = new int[dimensioneArray];
+            Console.WriteLine("Array di 20 numeri casuali:");
 
+            int numeroElementi = 20;
             Random generatore = new Random();
-            for (int i = 0; i < dimensioneArray; i++)
+            int[] arrayNum = new int[numeroElementi];
+
+            for (int i = 0; i < arrayNum.Length; i++)
             {
-                array1[i] = generatore.Next(1, 11);
-                array2[i] = generatore.Next(1, 11);
-                arraySomma[i] = array1[i] + array2[i];
+                int numeroCasuale = generatore.Next(1, 13);
+                if (numeroCasuale == 11)
+                {
+                    Console.WriteLine("Numero 11 generato, interruzione del ciclo.");
+                    break;
+                }
+                arrayNum[i] = numeroCasuale;
             }
-            Console.WriteLine("Array 1: " + string.Join(", ", array1));
-            Console.WriteLine("Array 2: " + string.Join(", ", array2));
-            Console.WriteLine("Array Somma: " + string.Join(", ", arraySomma));
+
+            Console.WriteLine("Array generato (fino al numero 11): " + string.Join(", ", arrayNum));
         }
     }
 }
